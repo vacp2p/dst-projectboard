@@ -40,7 +40,7 @@ body:
     attributes:
       label: Docker image
       description: Whaat docker image is required to test the software?
-      placeholder: soutullostatus/example-nwaku:v0.28.0
+      placeholder: "soutullostatus/example-nwaku:v0.28.0"
     validations:
       required: true
   - type: input
@@ -48,7 +48,7 @@ body:
     attributes:
       label: Number of nodes
       description: How many nodes do you want to spawn?
-      placeholder: 3
+      placeholder: "3"
       value: "A bug happened!"
     validations:
       required: true
@@ -57,7 +57,7 @@ body:
     attributes:
       label: Bootstrap nodes
       description: How many bootstrap nodes do you want to spawn?
-      placeholder: 3
+      placeholder: "3"
       value: "A bug happened!"
     validations:
       required: true
