@@ -7,7 +7,18 @@ assignees: Zorlin
 
 ---
 
-Please fill out the following form to request a deployment/test.
+<!-- Please fill out the following form to request a deployment/test. -->
+
+body:
+- type: dropdown
+  id: download
+  attributes:
+    label: Select a milestone that this work affects
+    options:
+      - `vac:dst:deployment-and-analysis:waku:10k`
+      - `vac:dst:deployment-and-analysis:waku:midscale`
+      - `vac:dst:deployment-and-analysis:codex:testnet`
+      - `vac:dst:deployment-and-analysis:nomos:mixnet`
 
 ```
 # Major project - waku, codex, nomos
