@@ -29,10 +29,10 @@ body:
       label: What milestone is this testing being done against?
       multiple: true
       options:
-        - `vac:dst:deployment-and-analysis:waku:10k`
-        - `vac:dst:deployment-and-analysis:waku:midscale`
-        - `vac:dst:deployment-and-analysis:codex:testnet`
-        - `vac:dst:deployment-and-analysis:nomos:mixnet`
+        - vac:dst:deployment-and-analysis:waku:10k
+        - vac:dst:deployment-and-analysis:waku:midscale
+        - vac:dst:deployment-and-analysis:codex:testnet
+        - vac:dst:deployment-and-analysis:nomos:mixnet
     validations:
       required: true
   - type: input
