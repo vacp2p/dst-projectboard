@@ -60,7 +60,7 @@ config:
 # The service account is necessary to allow discovery of other services
 serviceAccount:
   create: true
-  name: homepage
+  name: vachomepage
 
 # This enables the service account to access the necessary resources
 enableRbac: true
