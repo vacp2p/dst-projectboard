@@ -1,0 +1,86 @@
+image:
+  repository: ghcr.io/gethomepage/homepage
+  tag: v0.9.6
+config:
+  services:
+    - Status and updates:
+        - Storage:
+            icon: mdi-nas
+            href: https://status.vaclab.org/status/storage
+            description: Distributed storage status
+            widget:
+              type: uptimekuma
+              url: https://status.vaclab.org
+              slug: storage
+    - Management:
+        - Rancher:
+            icon: rancher.png
+            href: https://rancher.riff.cc/
+            description: Manage Kubernetes
+        - Proxmox:
+            icon: proxmox.png
+            href: https://vaxis.riff.cc:8006/
+            description: Manage Proxmox VMs
+        - AWX Automation:
+            icon: awx.png
+            href: https://awx.riff.cc/
+            description: Ansible, for better or worse
+        - NetBox:
+            icon: netbox.png
+            href: https://ipam.riff.cc/
+            description: Network infrastructure management
+        - CheckMK:
+            icon: checkmk.png
+            href: http://monitoring.riff.cc/monitoring
+            description: Enterprise infrastruture monitoring
+    - Backups:
+        - Proxmox Backup Server:
+            icon: proxmox.png
+            href: https://pbs.per.riff.cc:8007/
+            description: Manage Proxmox backups
+
+  widgets:
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "Ruby Cluster"
+        nodes:
+          show: false
+    - greeting:
+        text_size: x3
+        text: "Welcome to VacLab."
+    # show the kubernetes widget, with the cluster summary and individual nodes
+  kubernetes:
+    mode: cluster
+  settings:
+
+# The service account is necessary to allow discovery of other services
+serviceAccount:
+  create: true
+  name: homepage
+
+# This enables the service account to access the necessary resources
+enableRbac: true
+
+ingress:
+  main:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "acme-prod"
+      # gethomepage.dev/enabled: "true"
+      # gethomepage.dev/name: "Homepage"
+      # gethomepage.dev/description: "A dashboard for the Riff Lab"
+      # gethomepage.dev/group: "Status and updates"
+      # gethomepage.dev/icon: "homepage.png"
+    hosts:
+      - host: home.vaclab.org
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+    - secretName: vaclabhomepage-tls-secret
+      hosts:
+      - "home.vaclab.org"
