@@ -1,0 +1,69 @@
+name: Single Waku simulation
+description: Request a single Waku simulation and analysis from DST
+title: "[Waku] "
+labels: ["analysis-required", "test-pending"]
+assignees:
+  - Zorlin
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to create a request for a Waku simulation.
+        If possible, VacLab will perform the simulation automatically and collect results to be analysed by DST staff later.
+        You may specify specific things you wish to be analysed later.
+  - type: input
+    id: what
+    attributes:
+      label: What's being tested?
+      description: In brief, what is being tested that requires this simulation?
+      placeholder: "ex: Waku relay bandwidth usage"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes: 
+      label: Longer test description
+      description: You can go into more detail here about what needs to be done and any specifics about the test.
+      placeholder: "We are testing the bandwidth usage of Waku when relaying messages."
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: What milestone is this testing being done against?
+      multiple: true
+      options:
+        - vac:dst:deployment-and-analysis:waku:10k
+        - vac:dst:deployment-and-analysis:waku:midscale
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Docker image
+      description: Whaat docker image is required to test the software?
+      placeholder: "soutullostatus/example-nwaku:v0.28.0"
+    validations:
+      required: true
+  - type: input
+    id: num-nodes
+    attributes:
+      label: Number of nodes
+      description: How many nodes do you want to spawn?
+      placeholder: "1000"
+    validations:
+      required: true
+  - type: input
+    id: num-bootstrap
+    attributes:
+      label: Bootstrap nodes
+      description: How many bootstrap nodes do you want to spawn?
+      placeholder: "3"
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: Duration
+      description: How long do you want to run each deployment for? (in minutes)
+      placeholder: "20"
+    validations:
+      required: true
