@@ -1,0 +1,87 @@
+name: Virtual machine(s)
+description: Request to have a virtual machine or set of virtual machines provisioned in VacLab
+title: "[VM] <replace me>"
+labels: ["virtualmachine"]
+assignees:
+  - Zorlin
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to create a request for a virtual machine.
+        If possible, VacLab will create the machine for you automatically once your request has been reviewed and approved by DST staff.
+        You may specify specific things you need installed on the machine beyond the initial installation later.
+  - type: input
+    id: what
+    attributes:
+      label: What's the machine going to be used for?
+      description: In brief, what is this machine needed to achieve?
+      placeholder: "ex: Shadow simulations for Waku"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes: 
+      label: Longer test description
+      description: You can go into more detail here about what needs you have and any specifics about the machine.
+      placeholder: "We are using this machine to test the scalability of Waku in small scale simulations."
+  - type: textarea
+    id: milestone
+    attributes:
+      label: What milestone(s) does this VM help move forward?
+      description: Please specify which DST milestone (example format `vac:dst:deployment-and-analysis:waku:10k`) this VM will work towards fulfilling. If you do not have a valid milestone to file against, please talk to us and let us know your requirements.
+    validations:
+      required: true
+  - type: dropdown
+    id: distribution
+    attributes:
+      label: What distribution would you like on the machine?
+      description: Please specify which OS and version you need.
+      multiple: false
+      options:
+        - Debian 12
+        - Ubuntu 22.04
+        - Ubuntu 24.04
+        - I don't know
+    validations:
+      required: true
+  - type: input
+    id: resources-cores
+    attributes:
+      label: Virtual CPU cores
+      description: How many virtual cpu cores (vCPUs) do you need? For example, for the equivalent of a 32 core physical machine, specify "64".
+      placeholder: "8"
+    validations:
+      required: true
+  - type: input
+    id: resources-memory
+    attributes:
+      label: Memory (RAM) allocation
+      description: How much RAM, in GiB (gibibytes) do you require for your use case?
+      placeholder: "8"
+    validations:
+      required: true
+  - type: input
+    id: resources-memory-min
+    attributes:
+      label: Memory (RAM) allocation (minimum)
+      description: VacLab uses memory ballooning to improve efficiency. When you're not using all your RAM, we'll reclaim some of it for use on other machines to ensure the lab can be useful for as many of us as possible. How much RAM, in GiB (gibibytes) is the absolute minimum you require (for stable long running workloads)? If you're not sure, please specify 4.
+      placeholder: "4"
+    validations:
+      required: true
+  - type: input
+    id: num-instances
+    attributes:
+      label: Number of instances
+      description: How many instances do you need?
+      placeholder: "1"
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: Duration
+      description: How long do you need these machines for? (in months)
+      placeholder: "6"
+    validations:
+      required: true
