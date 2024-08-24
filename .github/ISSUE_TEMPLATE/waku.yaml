@@ -1,6 +1,6 @@
 name: Single Waku simulation
 description: Request a single Waku simulation and analysis from DST
-title: "[Waku] "
+title: "[Waku] A short name for the simulation you're requesting"
 labels: ["analysis-required", "test-pending"]
 assignees:
   - Zorlin
