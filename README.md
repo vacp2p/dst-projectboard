@@ -1,2 +1,2 @@
 # vaclab
-Internal repo for tracking the efforts and results of Vaclab simulations
+Internal repository for tracking the efforts and results of VacLab simulations and infrastructure.
