@@ -108,15 +108,16 @@ body:
     attributes:
       label: Publisher Message Count
       description: Specify the total number of messages to publish
-      placeholder: "4000"
+      placeholder: "1000"
   - type: dropdown
     id: artificial-latency
     attributes:
       label: Enable Artificial Latency
       description: Do you want to simulate network latency?
       options:
-        - "Yes"
         - "No"
+        - "Yes"
+      default: 0
   - type: input
     id: latency-ms
     attributes:
@@ -129,8 +130,10 @@ body:
       label: Use Custom Command
       description: Do you want to use a custom command for the Waku nodes?
       options:
-        - "Yes"
         - "No"
+        - "Yes"
+      default: 0
+        
   - type: textarea
     id: custom-command-args
     attributes:
