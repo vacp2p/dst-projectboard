@@ -77,7 +77,6 @@ body:
         - "No"
     validations:
       required: true
-     required: true
   - type: markdown
     attributes:
       value: |
