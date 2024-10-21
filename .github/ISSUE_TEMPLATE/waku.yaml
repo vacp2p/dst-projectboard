@@ -77,6 +77,99 @@ body:
         - "No"
     validations:
       required: true
+B
+Is there a way to do a hidden section that people can expand if they want to customise those settings?
+
+
+Yes, GitHub issue templates support collapsible sections using the <details> HTML tag. We can use this to create a hidden section for advanced settings that users can expand if they want to customize further. Here's how we can modify the template to include this feature:
+
+markdown
+
+Copy
+name: Single Waku simulation
+description: Request a single Waku simulation and analysis from DST
+title: "[Waku] Replace me with a descriptive title"
+labels: ["analysis-required", "test-pending"]
+assignees:
+  - Zorlin
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to create a request for a Waku simulation.
+        If possible, VacLab will perform the simulation automatically and collect results to be analysed by DST staff later.
+        You may specify specific things you wish to be analysed later.
+  - type: input
+    id: what
+    attributes:
+      label: What's being tested?
+      description: In brief, what is being tested that requires this simulation?
+      placeholder: "ex: Waku relay bandwidth usage"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes: 
+      label: Longer test description
+      description: You can go into more detail here about what needs to be done and any specifics about the test.
+      placeholder: "We are testing the bandwidth usage of Waku when relaying messages."
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: What milestone is this testing being done against?
+      multiple: true
+      options:
+        - vac:dst:deployment-and-analysis:waku:10k
+        - vac:dst:deployment-and-analysis:waku:midscale
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Docker image
+      description: What docker image is required to test the software?
+      placeholder: "zorlin/waku:debug-extra-nim-libp2p-logs-over-v0.31.0-with-extra-logs-mplex-perf"
+    validations:
+      required: true
+  - type: input
+    id: num-nodes
+    attributes:
+      label: Number of nodes
+      description: How many nodes do you want to spawn?
+      placeholder: "50"
+    validations:
+      required: true
+  - type: input
+    id: num-bootstrap
+    attributes:
+      label: Bootstrap nodes
+      description: How many bootstrap nodes do you want to spawn?
+      placeholder: "3"
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: Duration
+      description: How long do you want to run each deployment for? (in minutes)
+      placeholder: "20"
+    validations:
+      required: true
+  - type: input
+    id: pubsub-topic
+    attributes:
+      label: PubSub Topic
+      description: Specify the PubSub topic to use for the simulation
+      placeholder: "/waku/2/rs/2/0"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        <details>
+        <summary>Advanced Settings (click to expand)</summary>
+
+        The following settings are optional. Expand this section if you need to customize these parameters.
   - type: input
     id: publisher-message-size
     attributes:
@@ -103,8 +196,6 @@ body:
       options:
         - "Yes"
         - "No"
-    validations:
-      required: true
   - type: input
     id: latency-ms
     attributes:
@@ -119,8 +210,6 @@ body:
       options:
         - "Yes"
         - "No"
-    validations:
-      required: true
   - type: textarea
     id: custom-command-args
     attributes:
@@ -130,3 +219,8 @@ body:
         - arg1
         - arg2
         - arg3
+
+  - type: markdown
+    attributes:
+      value: |
+        </details>
