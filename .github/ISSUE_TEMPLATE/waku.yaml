@@ -91,8 +91,6 @@ body:
       label: PubSub Topic
       description: Specify the PubSub topic to use for the simulation
       placeholder: "/waku/2/rs/2/0"
-    validations:
-      required: true
   - type: input
     id: publisher-message-size
     attributes:
