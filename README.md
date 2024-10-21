@@ -1,4 +1,4 @@
-<img src="https://status.vaclab.org/api/badge/1/status" alt="Status" />
+![Status](https://status.vaclab.org/api/badge/1/status)
 
 # vaclab
 Internal repository for tracking the efforts and results of VacLab simulations and infrastructure.
