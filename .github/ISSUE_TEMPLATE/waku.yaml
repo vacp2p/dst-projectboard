@@ -67,3 +67,66 @@ body:
       placeholder: "20"
     validations:
       required: true
+  - type: dropdown
+    id: publisher-enabled
+    attributes:
+      label: Enable Publisher
+      description: Do you want to enable the publisher for this simulation?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: input
+    id: publisher-message-size
+    attributes:
+      label: Publisher Message Size
+      description: Specify the size of messages published (in KB)
+      placeholder: "1"
+  - type: input
+    id: publisher-delay-seconds
+    attributes:
+      label: Publisher Delay
+      description: Specify the delay between messages (in seconds)
+      placeholder: "10"
+  - type: input
+    id: publisher-message-count
+    attributes:
+      label: Publisher Message Count
+      description: Specify the total number of messages to publish
+      placeholder: "4000"
+  - type: dropdown
+    id: artificial-latency
+    attributes:
+      label: Enable Artificial Latency
+      description: Do you want to simulate network latency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: input
+    id: latency-ms
+    attributes:
+      label: Artificial Latency (ms)
+      description: If enabled, specify the artificial latency in milliseconds
+      placeholder: "50"
+  - type: dropdown
+    id: custom-command
+    attributes:
+      label: Use Custom Command
+      description: Do you want to use a custom command for the Waku nodes?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: custom-command-args
+    attributes:
+      label: Custom Command Arguments
+      description: If using a custom command, specify the arguments here
+      placeholder: |
+        - arg1
+        - arg2
+        - arg3
