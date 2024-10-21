@@ -2,6 +2,18 @@ image:
   repository: ghcr.io/gethomepage/homepage
   tag: v0.9.6
 config:
+  bookmarks:
+    - Development:
+        - Vac GitHub:
+            - abbr: GH
+              href: https://github.com/vacp2p
+        - VacLab GitHub:
+            - abbr: GH
+              href: https://github.com/vacp2p/vaclab
+        - 10K Simulations:
+            - abbr: GH
+              href: https://github.com/vacp2p/10ksim
+
   services:
     - Status and updates:
         - Storage:
