@@ -80,10 +80,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        <details>
-        <summary>Advanced Settings (click to expand)</summary>
-
-        The following settings are optional. Expand this section if you need to customize these parameters.
+        ---
+        ## Advanced Settings
+        
+        The following settings are optional. If you don't think you need to change them, you probably don't.
+        Only modify these if you have specific requirements for your simulation.
   - type: input
     id: pubsub-topic
     attributes:
@@ -136,13 +137,7 @@ body:
     id: custom-command-args
     attributes:
       label: Custom Command Arguments
-      description: If using a custom command, specify the arguments here
+      description: If you need to use custom command arguments, specify them here (one per line).
       placeholder: |
-        - arg1
-        - arg2
-        - arg3
-
-  - type: markdown
-    attributes:
-      value: |
-        </details>
+        --custom-flags=foo
+        --more-custom-flags=bar
