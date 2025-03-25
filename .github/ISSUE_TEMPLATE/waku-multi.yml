@@ -92,14 +92,12 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: execution-mode
+  - type: input
+    id: parallelism
     attributes:
-      label: Execution Mode
-      description: Specify whether to run matrix deployments in parallel or sequentially. This option only applies to matrix configurations.
-      options:
-        - "Parallel"
-        - "Sequential"
+      label: Parallelism
+      description: How many jobs do you want to run at once? (0 for unlimited)
+      placeholder: "1"
     validations:
       required: true
 
